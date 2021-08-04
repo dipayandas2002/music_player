@@ -1,6 +1,9 @@
-import "./styles.css";
 import React from "react";
-import Search from "./components/search";
+import Search from "../src/components/search";
+import Playlist from "../src/components/playlist";
+import Player from "../src/components/player";
+
+import {} from "../src/CSS/search.css";
 
 function App() {
   return (
@@ -9,6 +12,7 @@ function App() {
         <Search />
       </div>
       <div className="playlist"></div>
+      <div className="player"></div>
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.search{
+    border: 1px solid black;
+    /* display: inline-block; */
+    width: 25%;
+    padding:10px;
+    height: 100vh;
+    
+}
+.search Button {
+    margin-left: 10px;
+}
