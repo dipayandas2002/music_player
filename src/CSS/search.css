@@ -1,11 +1,31 @@
 .search{
-    border: 1px solid black;
+    border-right: 1px solid black;
     /* display: inline-block; */
-    width: 25%;
+    width: 27%;
     padding:10px;
-    height: 100vh;
+    height: fit-content;
     
 }
 .search Button {
     margin-left: 10px;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+li div {
+    border: 1px solid red;
+    margin-block: 15px;
+    padding: 3px;
+    text-overflow: hidden;
 }
