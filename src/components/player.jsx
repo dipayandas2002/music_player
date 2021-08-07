@@ -26,20 +26,21 @@ function Player(props) {
         else {
 
             if (j === 0) {
+
                 player.load(props.array[0].utubeId)
                 player.setPlaybackQuality("small")
                 player.play();
                 img = props.array[i].thumbnail
                 console.log(img);
 
+
                 j = 1;
 
-                console.log("j =" + j);
 
             } else {
 
                 player.play();
-                console.log(`i = ${i}`)
+
             }
 
         }
@@ -50,16 +51,21 @@ function Player(props) {
         i--;
         player.load(props.array[i].utubeId)
         player.play();
-        img = props.array[i].thumbnail
+
+        // img = props.array[i].thumbnail
+
+        // imgChange(props.array[i].thumbnail)
 
     }
     function next() {
         player.pause()
         i++;
-        img = props.array[i].thumbnail
         player.load(props.array[i].utubeId)
         player.play();
 
+        // img = props.array[i].thumbnail
+
+        // imgChange(props.array[i].thumbnail)
 
     }
 
