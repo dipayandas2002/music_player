@@ -1,0 +1,52 @@
+.search{
+    border-right: 1px solid black;
+    width: 27%;
+    padding:10px;
+    height: fit-content;
+    
+}
+.playlist{
+    border-right: 1px solid black;
+    width: 30%;
+    padding:10px;
+    height: fit-content;
+    
+}
+
+.search button{
+    margin-left: 10px;
+}
+
+.ListButton , .playlist Button {
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    padding: 15px;
+}
+
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(136, 241, 241);
+    margin: 3px;
+    margin-block: 10px;
+    border-radius: 15px;
+    
+    
+}
+
+li div {
+    /* border: 1px solid red; */
+    margin-block: 15px;
+    text-overflow: hidden;
+    text-align: center;
+    padding-inline: 15px;
+}

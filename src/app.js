@@ -1,28 +1,18 @@
 import React, { useState } from "react";
-import Search from "../src/components/search";
-// import Playlist from "../src/components/playlist";
+import { Search, List } from "../src/components/search";
+import PlayList from "../src/components/playlist";
+import Player from "../src/components/player";
+
 // import Player from "../src/components/player";
-import { } from "../src/CSS/search.css";
 
 
-function List(props) {
 
-  function handleAdd() {
-    props.onAdd(props.id)
-  }
-
-  return <li >
-    <div>{props.name}</div>
-    <button id={props.id} onClick={handleAdd}>+</button>
-  </li>
-
-}
 
 function App() {
   const [searcharray, arrayChange] = useState([]);
   const [playlistArray, playArrayChange] = useState([]);
 
-  
+
   function updateArray(array) {
     // console.log(array);
     arrayChange(() => {
@@ -33,8 +23,24 @@ function App() {
   function addHandler(index) {
 
     playArrayChange((prevValue) => {
-      return [...prevValue, searcharray[index].snippet.title]
-      
+      return [...prevValue, {
+        title: searcharray[index].snippet.title,
+        thumbnail: searcharray[index].snippet.thumbnails.high.url,
+        utubeId: searcharray[index].id.videoId
+      }]
+
+    })
+  }
+
+  function del(index) {
+
+    playArrayChange((prevValue) => {
+      // console.log(index);
+      return prevValue.filter((item, id) => {
+        return id !== index
+
+      })
+
     })
   }
 
@@ -61,15 +67,22 @@ function App() {
         <h1>Playlist</h1>
         <ul>
           {playlistArray.map((elements, index) => {
-            return <li
+            return <PlayList
               id={index}
               key={index}
-            >{elements}</li>
+              name={elements.title}
+              utubeId={elements.utubeId}
+              thumbnail={elements.thumbnail}
+              onDel={del}
+            />
           })}
 
         </ul>
       </div>
-      <div className="player"></div>
+      <div className="player" >
+        <Player 
+        array = {playlistArray} />
+      </div>
     </div>
   );
 }

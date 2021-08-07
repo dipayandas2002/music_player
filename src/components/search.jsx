@@ -1,5 +1,8 @@
 import React,{useState} from "react";
 import { Button, Form, FormControl } from "react-bootstrap";
+import { } from "../CSS/search&playlist.css";
+import add from "../images/add.png"
+
 
 
 
@@ -44,4 +47,17 @@ function Search(props) { //S of search must be in capital letter
   );
 }
 
-export default Search;
+function List(props) {
+
+  function handleAdd() {
+    props.onAdd(props.id)
+  }
+
+  return <li >
+    <div>{props.name}</div>
+    <button className="ListButton" onClick={handleAdd}><img src={add} alt="+" /></button>
+  </li>
+
+}
+
+export  {Search,List};
